@@ -18,7 +18,7 @@ operator fun DateRange.iterator(): Iterator<MyDate> {
     return DateIterator(this)
 }
 
-class DateIterator(val dateRange: DateRange) : Iterator<MyDate> {
+class DateIterator(private val dateRange: DateRange) : Iterator<MyDate> {
     var current = dateRange.start
 
     override fun next(): MyDate {
